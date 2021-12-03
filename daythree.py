@@ -11,32 +11,23 @@ def getUncommonBit(bitlist, pos):
 
     return "1" if bits.count("1") < bits.count("0") else "0"
 
-def filterByBit(list, bit, pos):
-    filtered = []
+def reduceByCommonBit(bits, pos = 0):
+    bit = getCommonBit(bits, pos)
+    bits = list(filter(lambda x: x[pos] == bit, bits))
 
-    for item in list:
-        if (item[pos] == bit):
-            filtered.append(item)
-
-    return filtered
-
-def reduceByCommonBit(list, pos = 0):
-    bit = getCommonBit(list, pos)
-    list = filterByBit(list, bit, pos)
-
-    if (len(list) > 1):
-        return reduceByCommonBit(list, pos + 1)
+    if (len(bits) > 1):
+        return reduceByCommonBit(bits, pos + 1)
     else:
-        return list[0]
+        return bits[0]
 
-def reduceByUncommonBit(list, pos = 0):
-    bit = getUncommonBit(list, pos)
-    list = filterByBit(list, bit, pos)
+def reduceByUncommonBit(bits, pos = 0):
+    bit = getUncommonBit(bits, pos)
+    bits = list(filter(lambda x: x[pos] == bit, bits))
     
-    if (len(list) > 1):
-        return reduceByUncommonBit(list, pos + 1)
+    if (len(bits) > 1):
+        return reduceByUncommonBit(bits, pos + 1)
     else:
-        return list[0]
+        return bits[0]
 
 def partOne():
     with open('input/daythree.txt', 'r') as inputFile:
