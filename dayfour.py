@@ -3,6 +3,7 @@ class Board:
         self.boardNum = None
         self.numbers = [[], [], [], [], []]
         self.drawn = 0
+        self.done = False
         self.marked = {
             "rows": [0,0,0,0,0],
             "cols": [0,0,0,0,0],
@@ -25,12 +26,17 @@ class Board:
                     self.marked["rows"][row] += 1
 
     def check(self):
+        if self.done:
+            return True
+
         for row in self.marked["rows"]:
             if row > 4:
+                self.done = True
                 return True
 
         for col in self.marked["cols"]:
             if col > 4:
+                self.done = True
                 return True
         return False
 
