@@ -4,7 +4,7 @@ def partOne():
     prev      = None
 
     # Open the input file, use with so it's closed automatically
-    with open('input/dayone.txt', 'r') as inputFile:
+    with open('input/day1.txt', 'r') as inputFile:
         # Split on newlines, then apply int(x) for each line
         lines = [int(x) for x in inputFile.read().splitlines()]
 
@@ -25,7 +25,7 @@ def partTwo():
     increases = 0
     decreases = 0
 
-    with open('input/dayone.txt', 'r') as inputFile:
+    with open('input/day1.txt', 'r') as inputFile:
         lines = [int(x) for x in inputFile.read().splitlines()]
 
         for i, line in enumerate(lines):

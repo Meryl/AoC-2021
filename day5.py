@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 def partOne():
-    with open('input/dayfive.txt', 'r') as inputFile:
+    with open('input/day5.txt', 'r') as inputFile:
         lines = [[[int(num) for num in coord.split(',')] for coord in line.split(' -> ')] for line in inputFile.read().splitlines()]
 
         map = defaultdict(int)

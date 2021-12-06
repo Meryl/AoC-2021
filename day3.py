@@ -30,7 +30,7 @@ def reduceByUncommonBit(bits, pos = 0):
         return bits[0]
 
 def partOne():
-    with open('input/daythree.txt', 'r') as inputFile:
+    with open('input/day3.txt', 'r') as inputFile:
         lines = inputFile.read().splitlines()
         byteLen = len(lines[0])
         totalLines = len(lines)
@@ -54,7 +54,7 @@ def partOne():
     return gammaRate, epsilonRate
 
 def partTwo():
-    with open('input/daythree.txt', 'r') as inputFile:
+    with open('input/day3.txt', 'r') as inputFile:
         lines = inputFile.read().splitlines()
 
         return [int(reduceByCommonBit(lines), 2), int(reduceByUncommonBit(lines), 2)]

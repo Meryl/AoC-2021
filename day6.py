@@ -1,6 +1,6 @@
 import numpy as np
 
-with open('input/daysix.txt', 'r') as inputFile:
+with open('input/day6.txt', 'r') as inputFile:
     data = list(map(int, inputFile.read().split(',')))
 
 def passTime(fish, days = 1):

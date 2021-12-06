@@ -58,7 +58,7 @@ class Board:
         return score * int(number)
 
 def parseInput():
-    with open('input/dayfour.txt', 'r') as inputFile:
+    with open('input/day4.txt', 'r') as inputFile:
         draw = []
         boards = []
         inputParts = inputFile.read().split("\n\n")

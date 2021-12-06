@@ -2,7 +2,7 @@ def partOne():
     distance = 0
     depth = 0
 
-    with open('input/daytwo.txt', 'r') as inputFile:
+    with open('input/day2.txt', 'r') as inputFile:
         lines = inputFile.read().splitlines()
 
         for line in lines:
@@ -22,7 +22,7 @@ def partTwo():
     depth = 0
     aim = 0
 
-    with open('input/daytwo.txt', 'r') as inputFile:
+    with open('input/day2.txt', 'r') as inputFile:
         lines = inputFile.read().splitlines()
 
         for line in lines:
