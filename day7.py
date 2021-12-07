@@ -1,25 +1,20 @@
 horizontalPositions = []
-highest = 0
 
 with open('input/day7.txt', 'r') as inputFile:
     data = list(map(int, inputFile.read().split(',')))
 
     for position in data:
-        highest = highest if highest > position else position
         horizontalPositions.append(position)
 
 def partOne(costFunction = lambda n: n):
     fuelCosts = []
-    lowest = False
-    for i in range(0, highest + 1):
+    for i in range(min(horizontalPositions), max(horizontalPositions) + 1):
         fuelCost = 0
         for position in horizontalPositions:
-            n = abs(i - position)
-            fuelCost += int(costFunction(n))
-        lowest = lowest if lowest != False and fuelCost > lowest else fuelCost
+            fuelCost += int(costFunction(abs(i - position)))
         fuelCosts.append(fuelCost)
 
-    return lowest
+    return min(fuelCosts)
 
 def partTwo():
     return partOne(lambda n: ((n ** 2) + n) / 2)
